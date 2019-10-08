@@ -9,11 +9,28 @@
   },
   "scripts": {
     "start": "node index.js",
+    "backend": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Prateek Jaiswal",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "dialogflow": "^0.10.3",
+    "express": "^4.17.1",
+    "firebase": "^6.6.1",
+    "standard": "^14.1.0",
+    "structjson": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.2.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^1.19.1",
+    "prettier-standard": "^14.0.3"
   }
 }
