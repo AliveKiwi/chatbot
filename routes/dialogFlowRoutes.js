@@ -11,9 +11,9 @@ module.exports = app => {
       req.body.text,
       req.body.parameters
     );
-    console.log(responses);
+    // console.log(responses);
     const result = responses[0].queryResult;
-    res.send(result.fulfillmentText);
+    res.send(result);
   });
 
   app.post('/api/df_event_query', async (req, res) => {
@@ -22,8 +22,8 @@ module.exports = app => {
       req.body.event,
       req.body.parameters
     );
-    console.log(responses);
+    // console.log(responses);
     const result = responses[0].queryResult;
-    res.send(result.fulfillmentText);
+    res.send(result);
   });
 };
