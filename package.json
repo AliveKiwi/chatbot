@@ -10,7 +10,9 @@
   "scripts": {
     "start": "node index.js",
     "backend": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "frontend": "npm run start --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "test": "echo \"Error: no test specif,ied\" && exit 1"
   },
   "author": "Prateek Jaiswal",
   "license": "ISC",
@@ -23,6 +25,7 @@
     "structjson": "^1.0.1"
   },
   "devDependencies": {
+    "concurrently": "^5.0.0",
     "nodemon": "^1.19.1"
   }
 }

@@ -9,6 +9,7 @@ module.exports = app => {
     // Calling the function defined in chatbot.js file.
     const responses = await chatbot.textQuery(
       req.body.text,
+      req.body.userID,
       req.body.parameters
     );
     // console.log(responses);
@@ -20,6 +21,7 @@ module.exports = app => {
     // Calling the function defined in chatbot.js file.
     const responses = await chatbot.eventQuery(
       req.body.event,
+      req.body.userID,
       req.body.parameters
     );
     // console.log(responses);

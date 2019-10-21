@@ -1,0 +1,16 @@
+{
+  "messages": [
+    {
+      "speaks": "bot",
+      "msg": "msg"
+    },
+    {
+      "speaks": "me",
+      "msg": {
+        "text": {
+          "text": "queryText"
+        }
+      }
+    }
+  ]
+}

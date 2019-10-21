@@ -4,19 +4,19 @@ const structjson = require('structjson');
 const config = require('../config/keys');
 
 const projectID = config.googleProjectID;
+const sessionID = config.dialogFlowSessionID;
+const languageCode = config.dialogFlowSessionLanguageCode;
+
 const credentials = {
   client_email: config.googleClientEmail,
   private_key: config.googlePrivateKey
 };
 
 const sessionClient = new dialogflow.SessionsClient({ projectID, credentials });
-const sessionPath = sessionClient.sessionPath(
-  config.googleProjectID,
-  config.dialogFlowSessionID
-);
 
 module.exports = {
-  textQuery: async function(text, parameters = {}) {
+  textQuery: async function(text, userID, parameters = {}) {
+    let sessionPath = sessionClient.sessionPath(projectID, sessionID + userID);
     const self = module.exports;
     // Defining my request object for passing to Dialogflow.
     const request = {
@@ -26,7 +26,7 @@ module.exports = {
           // Query to Dialogflow
           text: text,
           // Language Code
-          languageCode: config.dialogFlowSessionLanguageCode
+          languageCode: languageCode
         }
       },
 
@@ -43,7 +43,8 @@ module.exports = {
     return responses;
   },
 
-  eventQuery: async function(event, parameters = {}) {
+  eventQuery: async function(event, userID, parameters = {}) {
+    let sessionPath = sessionClient.sessionPath(projectID, sessionID + userID);
     const self = module.exports;
     // Defining my request object for passing to Dialogflow.
     const request = {
@@ -52,7 +53,7 @@ module.exports = {
         event: {
           name: event,
           parameters: structjson.jsonToStructProto(parameters),
-          languageCode: config.dialogFlowSessionLanguageCode
+          languageCode: languageCode
         }
       }
     };

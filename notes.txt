@@ -1,0 +1,8 @@
+Commands
+
+heroku logs --app chatbot-demo-94 --tail
+git push origin master
+
+[0] [nodemon] Internal watch failed: ENOSPC: System limit for number of file watchers reached, watch '/home/seighart/Projects/reactbot/client/src/components/shop/Shop.js'
+Stop dropbox
+npm dedupe
