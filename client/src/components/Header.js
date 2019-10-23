@@ -5,12 +5,12 @@ const Header = () => {
     <nav>
       <div className="nav-wrapper">
         <Link to={'/'} className="brand-logo">
-          IT courses
+          Kloc Technologies
         </Link>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           {' '}
           <li>
-            <Link to={'/shop'}>Shop</Link>
+            <Link to={'/shop'}>Services</Link>
           </li>
           <li>
             <Link to={'/about'}>About Us</Link>

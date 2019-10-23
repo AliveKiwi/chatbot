@@ -4,7 +4,7 @@ import ItemList from './ItemList';
 const Shop = () => {
   return (
     <div>
-      <h2>Shop!</h2>
+      <h2>Services!</h2>
       <ItemList></ItemList>
     </div>
   );
